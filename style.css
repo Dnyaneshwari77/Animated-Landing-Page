@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto+Slab:wght@400;500;600;700;800&display=swap');
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #b5b8b1;
+    width: 100vw;
+    height: 100vh;
+}
+main
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    max-width: 780px;
+    max-height: 500px;
+    height: 70%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: white;
+    overflow: hidden;
+}
+nav
+{
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Noto Serif', serif;
+    font-weight: 600;
+    font-size: 0.7em;
+    position: fixed;
+}
+
+
+nav img
+{
+    width:150px;
+    height:40px;
+}
+nav ul
+{
+    height: 40px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li
+{
+    margin: 1em;
+}
+
+section
+{
+    width: 100%;
+    display:flex;
+    height: 500px;
+    overflow: hidden;
+}
+.content
+{
+    width: 50%;
+    margin: auto;
+    padding: 2em;
+    font-family: 'Noto Serif', serif;
+    margin-top:400px;
+    animation-name: up;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    /* animation-delay: ; */
+    transform: translateY(-300px);
+    
+}
+
+@keyframes up {
+
+    0%
+    {
+        transform:translateY(0) ;
+        visibility: visible;
+    }
+    100%
+    {
+        transform: translateY(-300px);
+    }
+
+    
+}
+
+#line1,#line2,#line3,.content p,.content button
+{
+    opacity: 0;
+    animation-name: content_show_up;
+    animation-timing-function: ease;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+#line1
+{
+ animation-delay: 0.2ms;
+}
+#line2
+{
+    animation-delay: 1s;
+    
+}
+#line3
+{
+ animation-delay: 2s;
+}
+.content p
+{
+    animation-delay: 3s;
+}
+.content button
+{
+    animation-delay: 4s;
+}
+
+@keyframes content_show_up {
+
+    10%
+    {
+        opacity: 0.5;
+    }
+    50%
+    {
+        opacity: 0.7;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+
+    
+}
+.content p
+{
+    font-size: 0.7em;
+    line-height: 1.5em;
+    font-weight: 600;
+
+}
+.content button
+{
+    font-family: 'Noto Serif', serif;
+    font-weight: 800;
+    padding: 0.5em 1em;
+    color: white;
+    background-color: #003865;
+    border: 0px;
+    margin-top: 0.5em;
+}
+.model
+{
+    width: 50%;
+    animation-name:color;
+    animation-delay: 8s;
+    animation-duration: 1s;
+    animation-timing-function:ease-out;
+    /* animation-iteration-count:infinite ; */
+    animation-fill-mode:forwards;
+}
+
+@keyframes color {
+
+    0%
+    {
+        background-color: white;
+    }
+    100%
+    {
+        background-color: #b5b8b1;
+    }
+    
+}
+.model img
+{
+    margin-left: -2000px;
+    width:100%;
+    height:80%;
+    max-width: 300px;
+    margin-top: 50px;
+    animation-name:image_moves_right;
+    animation-delay: 3s;
+    animation-duration: 5s;
+    animation-timing-function:ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes image_moves_right {
+
+    0%
+    {
+        transform: translateX(0px);
+    }
+    100%
+    {
+       transform: translateX(2000px);        
+    }
+
+    
+}
+@media (min-width:700px)
+{
+    .content
+    {
+        padding: auto;
+    }
+}
